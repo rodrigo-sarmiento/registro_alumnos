@@ -121,28 +121,15 @@ app.post('/api/students', (req, res) => {
     return res.status(201).json({ message: "Student registered successfully.", student: newStudent });
 });
 
-// Consultar estudiante por ID
-app.get('/api/students/:id', (req, res) => {
-    const id = parseInt(req.params.id);
-    const student = students.find(s => s.id === id);
-
-    if (!student) {
-        return res.status(404).json({ error: "Student not found." });
-    }
-
-    return res.status(200).json(student);
-});
-
-// Consultar estudiantes por carrera
+// Consultar estudiantes (todos o por carrera)
 app.get('/api/students', (req, res) => {
     const career = req.query.career;
-
-    if (!career) {
-        return res.status(400).json({ error: "Career filter is required." });
+    if (career) {
+        const filtered = students.filter(s => s.career.toLowerCase() === career.toLowerCase());
+        return res.status(200).json(filtered);
     }
-
-    const filtered = students.filter(s => s.career.toLowerCase() === career.toLowerCase());
-    return res.status(200).json(filtered);
+    // Si NO hay filtro, devuelve todos
+    return res.status(200).json(students);
 });
 
 // Eliminar estudiante por ID
