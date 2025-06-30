@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Carrera test"
+  },
+  {
+    "id": 2,
+    "name": "Ciencias de datos"
+  },
+  {
+    "id": 3,
+    "name": "licenciatura"
+  },
+  {
+    "id": 4,
+    "name": "tecnicatura"
+  },
+  {
+    "id": 5,
+    "name": "diplomatura"
+  },
+  {
+    "id": 6,
+    "name": "Curso"
+  },
+  {
+    "id": 7,
+    "name": "Curso 2"
+  }
+]

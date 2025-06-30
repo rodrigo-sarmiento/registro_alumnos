@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": 16,
+    "name": "A",
+    "career": "Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial"
+  },
+  {
+    "id": 17,
+    "name": "Rodrigo",
+    "career": "Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial"
+  },
+  {
+    "id": 18,
+    "name": "Rodrigo",
+    "career": "Tecnicatura Superior en Ciencia de Datos e Inteligencia Artificial"
+  },
+  {
+    "id": 19,
+    "name": "Rodrigo",
+    "career": "undefined"
+  },
+  {
+    "id": 21,
+    "name": "rewrwer",
+    "career": "undefined"
+  },
+  {
+    "id": 22,
+    "name": "Rodrigo",
+    "career": "Alimentos"
+  }
+]
