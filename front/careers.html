@@ -27,14 +27,7 @@
               <a class="nav-link active" href="index.html">Institucional</a> <!-- Enlace a la página principal -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="estudiantes.html">Estudiante</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="categorias.html">Categoria</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="carrera.html">Carrera</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -57,14 +50,9 @@
             <option value="certificación">Certificación</option>
           </select>
       
-          <select id="careerCategory" class="form-control dark-input mb-2">
-            <option value="">Categoría</option>
-            <option value="educacion">Educación</option>
-            <option value="psicologia">Psicología</option>
-            <option value="sociales">Sociales</option>
-            <option value="tecnología">Tecnología</option>
-            <option value="salud">Salud</option>
-          </select>
+        <select id="careerCategory" class="form-control dark-input mb-2">
+          <option value="" disabled selected>Categoría*</option>
+        </select>
       
           <textarea id="careerName" class="form-control dark-input mb-2" placeholder="Nombre completo de la carrera"></textarea>
       
@@ -95,34 +83,5 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>
-    <script>
-    document.addEventListener("DOMContentLoaded", async function() {
-    try {
-        const response = await fetch('http://localhost:5001/api/students', {
-            headers: {
-                "Authorization": "Bearer 12345ABCDEF"
-            }
-        });
-        const carrera = await response.json();
-        const tbody = document.querySelector("#tabla-carrera tbody");
-        tbody.innerHTML = ""; // Limpia por si acaso
-        
-        students.forEach(carrera => {
-            const row = document.createElement("tr");
-            row.innerHTML = `
-                <td>${student.id}</td>
-                <td>${student.name}</td>
-                <td>${student.lastName}</td>
-                <td>${student.mail}</td>
-                <td>${student.cel}</td>
-                <td>${student.career}</td>
-            `;
-            tbody.appendChild(row);
-        });
-    } catch (error) {
-        console.error("No se pudieron cargar los estudiantes:", error);
-    }
-   });
-   </script>
 </body>
 </html>

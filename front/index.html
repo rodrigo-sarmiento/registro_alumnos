@@ -28,10 +28,10 @@
         <li class="nav-item"><a class="nav-link" href="estudiantes.html">Estudiantes</a></li>
         <li class="nav-item"><a class="nav-link" href="docentes.html">Docentes</a></li>
         <li class="nav-item">
-         <a class="nav-link external-link" href="https://abc.gob.ar/calendario_escolar">Calendario</a>
+         <a class="nav-link external-link" href="https://abc.gob.ar/calendario_escolar" target="_blank" rel="noopener noreferrer">Calendario</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link external-link" href="https://isfdyt57-bue.infd.edu.ar/aula/acceso.cgi">CAMPUS</a>
+          <a class="nav-link external-link" href="https://isfdyt57-bue.infd.edu.ar/aula/acceso.cgi" target="_blank" rel="noopener noreferrer">CAMPUS</a>
          </li>
       </ul>
     </div>
@@ -62,10 +62,10 @@
       <h2 class="seccion-texto">Registrar Estudiante</h2>
       <p class="seccion-texto">Pre inscripción al ciclo 2026</p>
       <div class="col-md-12">
-   <select id="registerCareer" class="form-select">
-  <option value="" disabled selected>Selecciona tu carrera*</option>
-   </select>
-</div>
+    <select id="registerCareer" class="form-select">
+      <option value="" disabled selected>Selecciona tu carrera*</option>
+    </select>
+    </div>
       <div class="row g-3 mt-2">
         <div class="col-md-6">
           <input type="text" id="registerName" class="form-control" placeholder="Nombre">
@@ -139,48 +139,7 @@
   </div>
 </footer> 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  document.querySelectorAll('.external-link').forEach(link => {
-  link.addEventListener('click', function(e) {
-    e.preventDefault();
-    const url = this.href;
-    Swal.fire({
-      title: 'Vas a salir del sitio',
-      text: 'Estás por acceder a un sitio externo. ¿Deseas continuar?',
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonText: 'Sí, continuar',
-      cancelButtonText: 'Cancelar'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        window.location.href = url;
-      }
-    });
-  });
-});
-</script>
-<script>
-document.addEventListener("DOMContentLoaded", async function() {
-    const select = document.getElementById('registerCareer');
-    try {
-        const response = await fetch('http://localhost:5001/api/careers', {
-            headers: {
-                "Authorization": "Bearer 12345ABCDEF"
-            }
-        });
-        const careers = await response.json();
-        // Limpia las opciones previas (menos la de "Selecciona tu carrera*")
-        select.innerHTML = '<option value="" disabled selected>Selecciona tu carrera*</option>';
-        careers.forEach(career => {
-            // Ajusta según la estructura de tu careers.json
-            select.innerHTML += `<option value="${career.code}">${career.name}</option>`;
-        });
-    } catch (error) {
-        console.error("No se pudieron cargar las carreras:", error);
-    }
-});
-</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="app.js"></script>
   
 </body>
